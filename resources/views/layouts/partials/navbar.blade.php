@@ -16,6 +16,9 @@
                     </li>
                 @endforeach
                 <li class="nav-item">
+                    <a href="/contato" class="nav-link"><i class="nc-icon nc-tap-01"></i>Contato</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" rel="tooltip" title="Siga-nos no Twitter" data-placement="bottom" href="{{setting('social.twitter')}}" target="_blank">
                         <i class="fa fa-twitter"></i>
                         <p class="d-lg-none">Twitter</p>

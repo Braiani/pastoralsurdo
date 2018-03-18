@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="{{ app()->getLocale() }}">
 <head>
 	<meta charset="utf-8" />
     <link rel="icon" type="image/png" href="{{asset('/img/favicon.ico')}}">
@@ -16,7 +16,10 @@
 	<link href="{{asset('/css/paper-kit.css?v=2.1.0')}}" rel="stylesheet"/>
 
 	<!--  CSS for Demo Purpose, don't include it in your project     -->
-	<link href="{{asset('/css/demo.css')}}" rel="stylesheet" />
+    <link href="{{asset('/css/demo.css')}}" rel="stylesheet" />
+    
+    {{--  Toastr CSS file  --}}
+    @toastr_css
 
     <!--     Fonts and icons     -->
     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,300,700' rel='stylesheet' type='text/css'>
@@ -187,5 +190,9 @@
 
 <!--  Paper Kit Initialization snd functons -->
 <script src="{{asset('/js/paper-kit.js?v=2.1.0')}}"></script>
+
+{{--  Toastr files  --}}
+@toastr_js
+@toastr_render
 
 </html>

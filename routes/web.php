@@ -13,6 +13,8 @@
 
 Route::get('/', 'PublicPagesController@index')->name('home');
 Route::get('/pagina/{slug}', 'PublicPagesController@page');
+Route::get('/contato', 'PublicPagesController@getContato')->name('contato');
+Route::post('/contato', 'PublicPagesController@postContato');
 
 
 Route::group(['prefix' => 'admin'], function () {

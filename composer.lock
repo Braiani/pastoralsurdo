@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "de7e7d0c64aae42b6c342bfd5502845c",
+    "content-hash": "8e1a5010b1ada57b62097a94b1beb6e5",
     "packages": [
         {
             "name": "arrilot/laravel-widgets",
@@ -3543,6 +3543,70 @@
                 "environment"
             ],
             "time": "2016-09-01T10:05:43+00:00"
+        },
+        {
+            "name": "yoeunes/toastr",
+            "version": "v1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yoeunes/toastr.git",
+                "reference": "e9e1dbbf1eb61120e93d0b1b54c66fcd2a541e5c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yoeunes/toastr/zipball/e9e1dbbf1eb61120e93d0b1b54c66fcd2a541e5c",
+                "reference": "e9e1dbbf1eb61120e93d0b1b54c66fcd2a541e5c",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/session": "~5.5.0|~5.6.0",
+                "illuminate/support": "~5.5.0|~5.6.0",
+                "php": "^7.0|7.1"
+            },
+            "require-dev": {
+                "codedungeon/phpunit-result-printer": "^0.4.4|^0.6.0",
+                "orchestra/testbench": "~3.5.0|~3.6.0",
+                "phpunit/phpunit": "^6.2|^7.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Yoeunes\\Toastr\\ToastrServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Yoeunes\\Toastr\\": "src"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Younes Khoubza",
+                    "email": "younes.khoubza@gmail.com",
+                    "homepage": "https://dalilbook.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "toastr.js notifications for Laravel 5",
+            "homepage": "https://github.com/yoeunes/toastr",
+            "keywords": [
+                "laravel",
+                "laravel 5",
+                "notification",
+                "php",
+                "toastr",
+                "toastr js"
+            ],
+            "time": "2018-02-08T04:51:19+00:00"
         }
     ],
     "packages-dev": [
