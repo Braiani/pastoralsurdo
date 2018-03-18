@@ -11,9 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PublicPagesController@index')->name('home');
+Route::get('/pagina/{slug}', 'PublicPagesController@page');
 
 
 Route::group(['prefix' => 'admin'], function () {
