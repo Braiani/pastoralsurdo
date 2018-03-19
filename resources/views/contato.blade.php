@@ -26,25 +26,25 @@
                     <div class="row">
                         <div class="col-md-6">
                             <label>Nome</label>
-                            <div class="input-group">
+                            <div class="input-group @if($errors->has('nome')) has-danger @endif">
                                 <span class="input-group-addon">
                                     <i class="nc-icon nc-single-02"></i>
                                 </span>
-                                <input type="text" class="form-control" name="nome" placeholder="Nome">
+                                <input type="text" class="form-control" name="nome" placeholder="Nome" value="{{old('nome')}}">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <label>E-mail</label>
-                            <div class="input-group">
+                            <div class="input-group @if($errors->has('email')) has-danger @endif">
                                 <span class="input-group-addon">
                                     <i class="nc-icon nc-email-85"></i>
                                 </span>
-                                <input type="text" class="form-control" name="email" placeholder="E-mail">
+                                <input type="text" class="form-control" name="email" placeholder="E-mail" value="{{old('email')}}">
                             </div>
                         </div>
                     </div>
                     <label>Mensagem</label>
-                    <textarea class="form-control" rows="4" name="mensagem" placeholder="Mensagem..."></textarea>
+                    <textarea class="form-control" rows="4" name="mensagem" placeholder="Mensagem...">{{old('mensagem')}}</textarea>
                     <div class="row">
                         <div class="col-md-4 ml-auto mr-auto">
                             <button class="btn btn-danger btn-lg btn-fill">Enviar mensagem</button>

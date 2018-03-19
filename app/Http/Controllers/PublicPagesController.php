@@ -53,6 +53,7 @@ class PublicPagesController extends Controller
 
         if ($validation->fails()) {
             toastr()->error('Por favor, verifique os campos da mensagem!', 'Erro!');
+            return redirect()->back()->withErrors($validation)->withInput();
         }else{
             Contato::create($request->all());
             toastr()->success('Mensagem recebida com sucesso', 'Sucesso');
