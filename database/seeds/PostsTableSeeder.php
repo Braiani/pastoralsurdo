@@ -1,97 +1,44 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use TCG\Voyager\Models\Post;
 
 class PostsTableSeeder extends Seeder
 {
+
     /**
-     * Auto generated seed file.
+     * Auto generated seed file
+     *
+     * @return void
      */
     public function run()
     {
-        $post = $this->findPost('lorem-ipsum-post');
-        if (!$post->exists) {
-            $post->fill([
-                'title'            => 'Lorem Ipsum Post',
-                'author_id'        => 0,
-                'seo_title'        => null,
-                'excerpt'          => 'This is the excerpt for the Lorem Ipsum Post',
-                'body'             => '<p>This is the body of the lorem ipsum post</p>',
-                'image'            => 'posts/post1.jpg',
-                'slug'             => 'lorem-ipsum-post',
-                'meta_description' => 'This is the meta description',
-                'meta_keywords'    => 'keyword1, keyword2, keyword3',
-                'status'           => 'PUBLISHED',
-                'featured'         => 0,
-            ])->save();
-        }
+        
 
-        $post = $this->findPost('my-sample-post');
-        if (!$post->exists) {
-            $post->fill([
-                'title'     => 'My Sample Post',
-                'author_id' => 0,
-                'seo_title' => null,
-                'excerpt'   => 'This is the excerpt for the sample Post',
-                'body'      => '<p>This is the body for the sample post, which includes the body.</p>
-                <h2>We can use all kinds of format!</h2>
-                <p>And include a bunch of other stuff.</p>',
-                'image'            => 'posts/post2.jpg',
-                'slug'             => 'my-sample-post',
-                'meta_description' => 'Meta Description for sample post',
-                'meta_keywords'    => 'keyword1, keyword2, keyword3',
-                'status'           => 'PUBLISHED',
-                'featured'         => 0,
-            ])->save();
-        }
-
-        $post = $this->findPost('latest-post');
-        if (!$post->exists) {
-            $post->fill([
-                'title'            => 'Latest Post',
-                'author_id'        => 0,
-                'seo_title'        => null,
-                'excerpt'          => 'This is the excerpt for the latest post',
-                'body'             => '<p>This is the body for the latest post</p>',
-                'image'            => 'posts/post3.jpg',
-                'slug'             => 'latest-post',
-                'meta_description' => 'This is the meta description',
-                'meta_keywords'    => 'keyword1, keyword2, keyword3',
-                'status'           => 'PUBLISHED',
-                'featured'         => 0,
-            ])->save();
-        }
-
-        $post = $this->findPost('yarr-post');
-        if (!$post->exists) {
-            $post->fill([
-                'title'     => 'Yarr Post',
-                'author_id' => 0,
-                'seo_title' => null,
-                'excerpt'   => 'Reef sails nipperkin bring a spring upon her cable coffer jury mast spike marooned Pieces of Eight poop deck pillage. Clipper driver coxswain galleon hempen halter come about pressgang gangplank boatswain swing the lead. Nipperkin yard skysail swab lanyard Blimey bilge water ho quarter Buccaneer.',
-                'body'      => '<p>Swab deadlights Buccaneer fire ship square-rigged dance the hempen jig weigh anchor cackle fruit grog furl. Crack Jennys tea cup chase guns pressgang hearties spirits hogshead Gold Road six pounders fathom measured fer yer chains. Main sheet provost come about trysail barkadeer crimp scuttle mizzenmast brig plunder.</p>
-<p>Mizzen league keelhaul galleon tender cog chase Barbary Coast doubloon crack Jennys tea cup. Blow the man down lugsail fire ship pinnace cackle fruit line warp Admiral of the Black strike colors doubloon. Tackle Jack Ketch come about crimp rum draft scuppers run a shot across the bow haul wind maroon.</p>
-<p>Interloper heave down list driver pressgang holystone scuppers tackle scallywag bilged on her anchor. Jack Tar interloper draught grapple mizzenmast hulk knave cable transom hogshead. Gaff pillage to go on account grog aft chase guns piracy yardarm knave clap of thunder.</p>',
-                'image'            => 'posts/post4.jpg',
-                'slug'             => 'yarr-post',
-                'meta_description' => 'this be a meta descript',
-                'meta_keywords'    => 'keyword1, keyword2, keyword3',
-                'status'           => 'PUBLISHED',
-                'featured'         => 0,
-            ])->save();
-        }
-    }
-
-    /**
-     * [post description].
-     *
-     * @param [type] $slug [description]
-     *
-     * @return [type] [description]
-     */
-    protected function findPost($slug)
-    {
-        return Post::firstOrNew(['slug' => $slug]);
+        \DB::table('posts')->delete();
+        
+        \DB::table('posts')->insert(array (
+            0 => 
+            array (
+                'id' => 5,
+                'author_id' => 1,
+                'category_id' => 1,
+                'title' => 'VIA SACRA DE SURDOS',
+                'seo_title' => NULL,
+                'excerpt' => 'A Via Sacra de Surdos de Brasilia, é um sucesso e estará completando sua 10ª edição esse ano de 2018.',
+                'body' => '<p><span style="font-size: medium;">A Via Sacra de Surdos de Brasilia, &eacute; um sucesso e estar&aacute; completando sua 10&ordf; edi&ccedil;&atilde;o esse ano de 2018. Ser&aacute; uma linda encena&ccedil;&atilde;o da Paix&atilde;o e morte de Nosso Senhor.</span></p>
+<p><span style="font-size: medium;">Todas as edi&ccedil;&otilde;es foram e s&atilde;o feitas na l&iacute;ngua Brasileira de Sinais (Libras) e traduzidas simultaneamente para a l&iacute;ngua portuguesa, assim todo o p&uacute;blico, seja ele surdo ou n&atilde;o pode assistir ao espet&aacute;culo, que tamb&eacute;m conta com acessibilidade para pessoas cegas, a audiodescri&ccedil;&atilde;o. Sendo assim, &eacute; uma encena&ccedil;&atilde;o toda acess&iacute;vel e preparada para todos os p&uacute;blicos.</span></p>
+<p><span style="font-size: medium;">Os atores s&atilde;o pessoas surdas, e os ouvintes atuam apenas no apoio &agrave; produ&ccedil;&atilde;o e na tradu&ccedil;&atilde;o para o portugu&ecirc;s. A cada ano a encena&ccedil;&atilde;o &eacute; realizada em uma cidade diferente do Distrito Federal, com o objetivo de divulgar a todos a Libras e tamb&eacute;m evangelizar aos surdos e ouvintes dessas cidades sat&eacute;lites. <br />Parabenizamos &agrave; todos os envolvidos nessa grande tarefa realizada a 10 anos. Que o Senhor continue fortalecendo e aben&ccedil;oando esse grande projeto.</span></p>',
+                'image' => 'posts/May2018/HkWZUhQMLGE2LIjkLFXQ.jpg',
+                'slug' => 'via-sacra-de-surdos',
+                'meta_description' => NULL,
+                'meta_keywords' => NULL,
+                'status' => 'PUBLISHED',
+                'featured' => 0,
+                'created_at' => '2018-05-02 22:49:54',
+                'updated_at' => '2018-05-02 22:49:54',
+            ),
+        ));
+        
+        
     }
 }
