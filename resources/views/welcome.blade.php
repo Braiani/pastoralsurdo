@@ -58,17 +58,24 @@
         </div>
     </div>
 </div>
-        {{--  <div class="section @if(($loop->index % 2) != 0) section-dark @endif">
-            <div class="container text-center">
-                <div class="row">
-                    <div class="col-md-8 ml-auto mr-auto">
-                        <h2 class="title">{{ $noticia->title }}</h2>
-                        <h5 class="description">
-                            {!! $noticia->excerpt !!}
-                        </h5>
-                        <br>
-                    </div>
-                </div>
+<div class="section section-dark">
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-md-8 ml-auto mr-auto">
+                <h2 class="title">Missão</h2>
+                <h5 class="description">
+                    <h5>A Pastoral do Surdo é uma ação da Igreja Católica que tem como princípio e fundamentação no próprio projeto de vida e da pessoa de Jesus Cristo relatada no texto de Marcos 7, 32-35.</h5>
+                    <ul>
+                        <li>Anunciar Jesus Cristo às Comunidades de Surdos, presentes nos Regionais do Brasil através dos agentes de evangelização (catequistas e coordenadores);</li>
+                        <li>Possibilitar aos surdos um espaço dentro da Igreja Católica, assumindo diversos serviços e de ministérios;</li>
+                        <li>Dar testemunho de vida cristã dentro da Comunidade, buscando eliminar o preconceito, o individualismo e a discriminação, presente ainda hoje nas famílias, nas escolas, no mundo do trabalho e nas Igrejas;</li>
+                        <li>Conhecer os meios de comunicação do surdo, particularmente a LIBRAS (Língua Brasileira de Sinais), instrumento e mediação do diálogo com os outros e com Deus;</li>
+                        <li>Respeitar a identidade e a cultura dos surdos brasileiros e de outras comunidades de surdos do mundo, a fim de valorizar a vida e todas as suas potencialidades.</li>
+                    </ul>
+                </h5>
+                <br>
             </div>
-        </div>      --}}
+        </div>
+    </div>
+</div>
 @endsection
