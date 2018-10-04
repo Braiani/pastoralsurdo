@@ -2,12 +2,13 @@
 
 namespace App\Widgets;
 
-use Arrilot\Widgets\AbstractWidget;
+use TCG\Voyager\Widgets\BaseDimmer;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use TCG\Voyager\Facades\Voyager;
 use App\Contato;
 
-class ContatoWidget extends AbstractWidget
+class ContatoWidget extends BaseDimmer
 {
     /**
      * The configuration array.
@@ -35,5 +36,10 @@ class ContatoWidget extends AbstractWidget
             ],
             'image' => 'coment-widget-bg.jpg',
         ]));
+    }
+
+    public function shouldBeDisplayed()
+    {
+        return Auth::user()->can('browse', new Contato());
     }
 }

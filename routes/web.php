@@ -13,6 +13,7 @@
 
 Route::get('/', 'PublicPagesController@index')->name('home');
 Route::get('/pagina/{slug}', 'PublicPagesController@page');
+Route::get('/noticia/{slug}', 'PublicPagesController@news')->name('noticia');
 Route::get('/contato', 'PublicPagesController@getContato')->name('contato');
 Route::post('/contato', 'PublicPagesController@postContato');
 

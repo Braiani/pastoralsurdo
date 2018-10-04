@@ -13,7 +13,7 @@ class PublicPagesController extends Controller
     public function index()
     {
         $pages = Page::active()->get();
-        $noticias = Post::latest()->take(4)->get();
+        $noticias = Post::latest()->take(6)->get();
 
         return view('welcome')->with([
             'pages' => $pages,
@@ -33,6 +33,21 @@ class PublicPagesController extends Controller
         }else{
             $pages = Page::active()->get();
 
+            return redirect()->route('home');
+        }
+    }
+
+    public function news($slug)
+    {
+        if (Post::where('slug', $slug)->where('status', 'PUBLISHED')->count() > 0) {
+            $pages = Page::active()->get();
+            $noticia = Post::where('slug', $slug)->first();
+            return view('singlepage')->with([
+                'pagina' => $noticia,
+                'pages' => $pages,
+                ]);
+        }else{
+            toastr()->error('Página não encontrada! Direcionamos a página inicial!', 'Erro!');
             return redirect()->route('home');
         }
     }

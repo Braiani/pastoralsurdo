@@ -37,10 +37,12 @@
                         <div class="carousel-inner" role="listbox">
                             @foreach ($noticias as $noticia)
                             <div class="carousel-item @if($loop->first) active @endif">
-                                <img class="d-block img-fluid" src="{{ url('/storage/' . $noticia->image) }}" alt="{{ $noticia->excerpt }}">
-                                <div class="carousel-caption d-none d-md-block">
+                                <a href="{{ route('noticia', $noticia->slug) }}">
+                                    <img class="d-block img-fluid" src="{{ url('/storage/' . $noticia->image) }}" alt="{{ $noticia->excerpt }}">
+                                </a>
+                                {{-- <div class="carousel-caption d-none d-md-block">
                                     <p>{{ $noticia->excerpt }}</p>
-                                </div>
+                                </div> --}}
                             </div>
                             @endforeach
                             <a class="left carousel-control carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
