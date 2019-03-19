@@ -8,7 +8,7 @@
             </nav>
             <div class="credits ml-auto">
                 <span class="copyright">
-                    © {{date('Y')}}, made with <i class="fa fa-heart heart"></i> by <a target="_blank" href="http://brtechsistemas.com.br">BR tech Sistemas</a>
+                    ©2018 -  {{date('Y')}}, made with <i class="fa fa-heart heart"></i> by <a target="_blank" href="http://brtechsistemas.com.br">BR tech Sistemas</a>
                 </span>
             </div>
         </div>
