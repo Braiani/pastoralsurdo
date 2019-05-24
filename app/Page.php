@@ -2,50 +2,28 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
-use TCG\Voyager\Traits\Translatable;
+use TCG\Voyager\Models\Page as VoyagerPage;
 
 
-class Page extends Model
+class Page extends VoyagerPage
 {
-    use Translatable;
-
-    protected $translatable = ['title', 'slug', 'body'];
-
-    /**
-     * Statuses.
-     */
-    const STATUS_ACTIVE = 'ACTIVE';
-    const STATUS_INACTIVE = 'INACTIVE';
-
-    /**
-     * List of statuses.
-     *
-     * @var array
-     */
-    public static $statuses = [self::STATUS_ACTIVE, self::STATUS_INACTIVE];
-
-    protected $guarded = [];
-
-    public function save(array $options = [])
+    public function authorId()
     {
-        // If no author has been assigned, assign the current user's id as the author of the post
-        if (!$this->author_id && Auth::user()) {
-            $this->author_id = Auth::user()->id;
-        }
+        return $this->belongsTo(User::class, 'author_id', 'id');
+    }
 
-        parent::save();
+    public function isActive()
+    {
+        return $this->status == static::STATUS_ACTIVE;
     }
 
     /**
-     * Scope a query to only include active pages.
+     * Get the route key for the model.
      *
-     * @param  $query  \Illuminate\Database\Eloquent\Builder
-     *
-     * @return \Illuminate\Database\Eloquent\Builder
+     * @return string
      */
-    public function scopeActive($query)
+    public function getRouteKeyName()
     {
-        return $query->where('status', static::STATUS_ACTIVE);
+        return 'slug';
     }
 }

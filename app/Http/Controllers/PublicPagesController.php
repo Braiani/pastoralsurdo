@@ -2,60 +2,38 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Page;
-use TCG\Voyager\Models\Post;
-use Validator;
 use App\Contato;
+use App\Page;
+use App\Post;
+use Illuminate\Http\Request;
+use Validator;
 
 class PublicPagesController extends Controller
 {
     public function index()
     {
-        $pages = Page::active()->get();
-        $noticias = Post::latest()->take(6)->get();
+        $noticias = Post::published()->latest()->take(4)->get();
 
         return view('welcome')->with([
-            'pages' => $pages,
             'noticias' => $noticias,
+        ]);
+    }
+
+    public function page(Page $page)
+    {
+        if ($page->isActive()) {
+            return view('singlepage')->with([
+                'conteudo' => $page,
             ]);
-    }
-
-    public function page($slug)
-    {
-        if (Page::where('slug', $slug)->active()->count() > 0) {
-            $pages = Page::active()->get();
-            $pagina = Page::where('slug', $slug)->first();
-            return view('singlepage')->with([
-                'pagina' => $pagina,
-                'pages' => $pages,
-                ]);
-        }else{
-            $pages = Page::active()->get();
-
-            return redirect()->route('home');
-        }
-    }
-
-    public function news($slug)
-    {
-        if (Post::where('slug', $slug)->where('status', 'PUBLISHED')->count() > 0) {
-            $pages = Page::active()->get();
-            $noticia = Post::where('slug', $slug)->first();
-            return view('singlepage')->with([
-                'pagina' => $noticia,
-                'pages' => $pages,
-                ]);
-        }else{
-            toastr()->error('Página não encontrada! Direcionamos a página inicial!', 'Erro!');
+        } else {
+            toastr('A página solicitada não encontra-se disponível!', 'info');
             return redirect()->route('home');
         }
     }
 
     public function getContato()
     {
-        $pages = Page::active()->get();   
-        return view('contato')->with(['pages' => $pages]);
+        return view('contato');
     }
 
     public function postContato(Request $request)
@@ -69,9 +47,9 @@ class PublicPagesController extends Controller
         if ($validation->fails()) {
             toastr()->error('Por favor, verifique os campos da mensagem!', 'Erro!');
             return redirect()->back()->withErrors($validation)->withInput();
-        }else{
+        } else {
             Contato::create($request->all());
-            toastr()->success('Mensagem recebida com sucesso', 'Sucesso');
+            toastr()->success('Mensagem enviada com sucesso', 'Sucesso');
         }
         return redirect()->route('contato');
     }
