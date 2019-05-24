@@ -1,58 +1,60 @@
 @extends('layouts.master')
 
-@section('page-header')
-<div class="page-header" data-parallax="true" style="background-image: url('{{ url('/storage/' . setting('site.logo'))}}');">
-    <div class="filter"></div>
-    <div class="container">
-        <div class="motto text-center">
-            <h1>{{ setting('site.title') }}</h1>
-            <h3>{{ setting('site.description') }}</h3>
-            <br />
-            {{--  <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="btn btn-outline-neutral btn-round"><i class="fa fa-play"></i>Watch video</a>
-            <button type="button" class="btn btn-outline-neutral btn-round">Download</button>  --}}
-        </div>
-    </div>
-</div>
-@endsection
-
 @section('content')
-<div class="section landing-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 ml-auto mr-auto">
-                <h2 class="text-center">Entre em contato</h2>
-                <form class="contact-form" method="POST" action="{{ url('/contato') }}">
-                    {{ csrf_field() }}
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label>Nome</label>
-                            <div class="input-group @if($errors->has('nome')) has-danger @endif">
-                                <span class="input-group-addon">
-                                    <i class="nc-icon nc-single-02"></i>
-                                </span>
-                                <input type="text" class="form-control" name="nome" placeholder="Nome" value="{{old('nome')}}">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <label>E-mail</label>
-                            <div class="input-group @if($errors->has('email')) has-danger @endif">
-                                <span class="input-group-addon">
-                                    <i class="nc-icon nc-email-85"></i>
-                                </span>
-                                <input type="text" class="form-control" name="email" placeholder="E-mail" value="{{old('email')}}">
-                            </div>
-                        </div>
+    <!-- ##### Contact Form Area Start ##### -->
+    <div class="contact-area section-padding-0-80">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="contact-title">
+                        <h2>Entre em contato</h2>
                     </div>
-                    <label>Mensagem</label>
-                    <textarea class="form-control" rows="4" name="mensagem" placeholder="Mensagem...">{{old('mensagem')}}</textarea>
-                    <div class="row">
-                        <div class="col-md-4 ml-auto mr-auto">
-                            <button class="btn btn-danger btn-lg btn-fill">Enviar mensagem</button>
-                        </div>
-                    </div>
-                </form>
+                </div>
             </div>
+
+            <div class="row">
+                <div class="col-12 col-lg-8">
+                    <div class="contact-form-area">
+                        <form action="{{ route('contato') }}" method="post">
+                            @csrf
+                            <div class="row">
+                                <div class="col-12 col-lg-6">
+                                    <input type="text" class="form-control" id="name" placeholder="Nome" name="nome" required>
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <input type="email" class="form-control" id="email" placeholder="E-mail" name="email" required>
+                                </div>
+                                <div class="col-12">
+                                    <textarea name="mensagem" class="form-control" id="message" cols="30" rows="10" placeholder="Mensagem" required></textarea>
+                                </div>
+                                <div class="col-12 text-center">
+                                    <button class="btn newspaper-btn mt-30 w-100" type="submit">Enviar mensagem</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-4">
+                    <!-- Single Contact Information -->
+                    <div class="single-contact-information mb-30">
+                        <h6>Endereço:</h6>
+                        <p>{{ setting('contato.endereco') }}</p>
+                    </div>
+                    <!-- Single Contact Information -->
+                    <div class="single-contact-information mb-30">
+                        <h6>Telefone:</h6>
+                        <p>{{ setting('contato.tel') }}</p>
+                    </div>
+                    <!-- Single Contact Information -->
+                    <div class="single-contact-information mb-30">
+                        <h6>E-mail:</h6>
+                        <p>{{ setting('contato.email') }}</p>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
-</div>
+    <!-- ##### Contact Form Area End ##### -->
 @endsection
