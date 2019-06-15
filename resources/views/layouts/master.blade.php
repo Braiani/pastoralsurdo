@@ -21,6 +21,9 @@
     <!-- Toastr CSS file -->
     @toastr_css
 
+    <!-- Custom CSS -->
+    @stack('css')
+
 </head>
 
 <body>
@@ -69,31 +72,17 @@
 <div class="featured-post-area">
     <div class="container">
         <div class="row">
-            <div class="col-12 mb-3">
+            <div class="col-12 col-md-6 col-lg-9 mb-3">
                 <div class="row">
                     @yield('content')
                 </div>
                 @yield('content-above')
             </div>
 
-            {{--<div class="col-12 col-md-6 col-lg-4 mb-3">
-                --}}{{--<!-- Single Featured Post -->
-                <div class="single-blog-post small-featured-post d-flex">
-                    <div class="post-thumb">
-                        <a href="#"><img src="img/bg-img/19.jpg" alt=""></a>
-                    </div>
-                    <div class="post-data">
-                        <a href="#" class="post-catagory">Finance</a>
-                        <div class="post-meta">
-                            <a href="#" class="post-title">
-                                <h6>Pellentesque mattis arcu massa, nec fringilla turpis eleifend id.</h6>
-                            </a>
-                            <p class="post-date"><span>7:00 AM</span> | <span>April 14</span></p>
-                        </div>
-                    </div>
-                </div>--}}{{--
+            <div class="col-12 col-md-6 col-lg-3 mb-3">
+                @include('layouts.partials.files')
 
-                <!-- Newsletter Widget -->
+                {{--<!-- Newsletter Widget -->
                 <div class="newsletter-widget">
                     <h4>Notícias</h4>
                     <p>Cadastre seu e-mail abaixo e seja notificado sempre que sair uma novidade.</p>
@@ -102,8 +91,8 @@
                         <input type="email" name="email" placeholder="E-mail">
                         <button type="submit" class="btn w-100">Cadastrar</button>
                     </form>
-                </div>
-            </div>--}}
+                </div>--}}
+            </div>
         </div>
     </div>
 </div>

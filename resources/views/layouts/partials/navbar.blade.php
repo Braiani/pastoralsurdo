@@ -32,6 +32,9 @@
                                 </li>
                             @endforeach
                             <li>
+                                <a href="{{ route('galeria.index') }}">Galeira</a>
+                            </li>
+                            <li>
                                 <a href="{{ route('contato') }}"><i class="nc-icon nc-email-85"></i>Contato</a>
                             </li>
                             <li>
