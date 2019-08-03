@@ -1,3 +1,7 @@
 .post-body-welcome{
     text-align: justify;
 }
+
+.file-description:hover {
+    color: black !important;
+}
