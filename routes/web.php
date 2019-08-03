@@ -11,7 +11,7 @@
 |
 */
 
-Route::group(['middleware' => 'setPageNavbar'], function () {
+Route::group(['middleware' => ['setPageNavbar', 'setFilesDownload']], function () {
     Route::get('/', 'PublicPagesController@index')->name('home');
     Route::get('/pagina/{page}', 'PublicPagesController@page')->name('pagina');
     Route::get('/noticia/{post}', 'NewsController@single')->name('noticia');
@@ -19,6 +19,7 @@ Route::group(['middleware' => 'setPageNavbar'], function () {
     Route::get('/noticias/q', 'NewsController@search')->name('noticias.search');
     Route::get('/contato', 'PublicPagesController@getContato')->name('contato');
     Route::post('/contato', 'PublicPagesController@postContato')->name('contato');
+    Route::resource('/galeria', 'GalleryController')->only(['index', 'show']);
 });
 
 

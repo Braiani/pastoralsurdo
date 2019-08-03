@@ -385,6 +385,86 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2018-03-18 16:30:06',
                 'updated_at' => '2018-03-18 16:30:06',
             ),
+            46 => 
+            array (
+                'id' => 47,
+                'key' => 'browse_archives',
+                'table_name' => 'archives',
+                'created_at' => '2019-06-15 12:27:59',
+                'updated_at' => '2019-06-15 12:27:59',
+            ),
+            47 => 
+            array (
+                'id' => 48,
+                'key' => 'read_archives',
+                'table_name' => 'archives',
+                'created_at' => '2019-06-15 12:27:59',
+                'updated_at' => '2019-06-15 12:27:59',
+            ),
+            48 => 
+            array (
+                'id' => 49,
+                'key' => 'edit_archives',
+                'table_name' => 'archives',
+                'created_at' => '2019-06-15 12:27:59',
+                'updated_at' => '2019-06-15 12:27:59',
+            ),
+            49 => 
+            array (
+                'id' => 50,
+                'key' => 'add_archives',
+                'table_name' => 'archives',
+                'created_at' => '2019-06-15 12:27:59',
+                'updated_at' => '2019-06-15 12:27:59',
+            ),
+            50 => 
+            array (
+                'id' => 51,
+                'key' => 'delete_archives',
+                'table_name' => 'archives',
+                'created_at' => '2019-06-15 12:27:59',
+                'updated_at' => '2019-06-15 12:27:59',
+            ),
+            51 => 
+            array (
+                'id' => 52,
+                'key' => 'browse_galleries',
+                'table_name' => 'galleries',
+                'created_at' => '2019-06-15 13:20:38',
+                'updated_at' => '2019-06-15 13:20:38',
+            ),
+            52 => 
+            array (
+                'id' => 53,
+                'key' => 'read_galleries',
+                'table_name' => 'galleries',
+                'created_at' => '2019-06-15 13:20:38',
+                'updated_at' => '2019-06-15 13:20:38',
+            ),
+            53 => 
+            array (
+                'id' => 54,
+                'key' => 'edit_galleries',
+                'table_name' => 'galleries',
+                'created_at' => '2019-06-15 13:20:38',
+                'updated_at' => '2019-06-15 13:20:38',
+            ),
+            54 => 
+            array (
+                'id' => 55,
+                'key' => 'add_galleries',
+                'table_name' => 'galleries',
+                'created_at' => '2019-06-15 13:20:38',
+                'updated_at' => '2019-06-15 13:20:38',
+            ),
+            55 => 
+            array (
+                'id' => 56,
+                'key' => 'delete_galleries',
+                'table_name' => 'galleries',
+                'created_at' => '2019-06-15 13:20:38',
+                'updated_at' => '2019-06-15 13:20:38',
+            ),
         ));
         
         
